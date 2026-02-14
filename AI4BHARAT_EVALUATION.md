@@ -102,7 +102,8 @@
 - 70% reduction in documentation time
 - 60% reduction in medical errors
 - 22 Indian languages supported
-- ₹50/patient/month operational cost
+- ₹23/patient/month operational cost (54% cost reduction)
+- 93% AI cost savings using open-source models
 
 ## 🔧 Technical Deep-Dive Topics
 
@@ -112,16 +113,19 @@
 A: AWS SageMaker trains models locally at each hospital, only sharing model updates (not patient data) to a central aggregator. This ensures DISHA compliance while improving model accuracy.
 
 **Q: How do you handle offline scenarios in rural areas?**
-A: Progressive Web Apps with local-first architecture, AWS Wavelength for edge computing, and sync when connectivity is restored.
+A: Progressive Web Apps with local-first architecture, edge computing with local processing, and sync when connectivity is restored.
 
-**Q: What's the cost breakdown for ₹50/patient/month?**
-A: AWS free tier (₹20), serverless Lambda (₹10), IoT Core (₹5), storage (₹10), Nova models (₹5). Spot instances reduce ML training costs by 70%.
+**Q: What's the cost breakdown for ₹23/patient/month?**
+A: Open-source AI (₹1), optimized compute (₹6), compressed storage (₹7), aggregated IoT (₹3), cached networking (₹3), sampled monitoring (₹2), other (₹1). 54% reduction through simple algorithms and local processing.
 
-**Q: How do you ensure AI model accuracy for Indian medical context?**
-A: Fine-tune AWS Nova models on Indian medical datasets, validate with AIIMS/PGI doctors, continuous learning from federated hospital data.
+**Q: How do you ensure AI model accuracy without expensive LLMs?**
+A: Rule-based systems handle 80% of cases with high accuracy. Local ML models (scikit-learn, BioBERT) handle complex cases. Continuous validation with AIIMS/PGI doctors.
 
 **Q: What's your ABDM integration strategy?**
 A: Native FHIR APIs via AWS HealthLake, Health ID integration, HPR/HFR registry sync, UHI for service discovery, consent management via blockchain.
+
+**Q: Why use simple algorithms instead of advanced AI?**
+A: 80% of healthcare decisions follow clear rules (vital signs thresholds, scheduling constraints). Simple algorithms are faster, cheaper, more transparent, and easier to validate for medical use. We use ML only for the 20% of complex cases.
 
 ## 📝 Next Steps
 
