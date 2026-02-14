@@ -1,3 +1,7 @@
 {
-    "kiroAgent.configureMCP": "Disabled"
+    "kiroAgent.configureMCP": "Enabled",
+    "kiroAgent.enableCodebaseIndexing": true,
+    "kiroAgent.enableDebugLogs": true,
+    "kiroAgent.enableTabAutocomplete": true,
+    "kiroAgent.notifications.agent.failure": true
 }
