@@ -195,18 +195,121 @@ Swasthya leverages **AWS's free and open source AI models** to ensure cost-effec
 - **Monitoring:** Amazon CloudWatch, AWS X-Ray
 
 ### Application Layer
-- **Frontend:** React, TypeScript, Web3.js
-- **Backend:** Node.js, Python (FastAPI)
-- **Blockchain:** Hyperledger Fabric / Polygon (for health records)
+- **Frontend:** React 18 + TypeScript + Vite + TailwindCSS
+- **Backend:** Node.js (Express) + Python (FastAPI for AI agents)
+- **Blockchain:** Hyperledger Fabric (for health records)
 - **AI/ML Frameworks:** PyTorch, TensorFlow, NVIDIA Clara
-- **LLMs:** AWS Nova Models (Pro, Lite, Micro), Amazon Titan, Falcon, BLOOM
-- **Database:** PostgreSQL (Amazon RDS), MongoDB (Amazon DocumentDB), IPFS
+- **LLMs:** AWS Nova Models (Pro, Lite, Micro, Canvas, Reel), Amazon Titan
+- **Database:** PostgreSQL (Amazon RDS), Redis (ElastiCache), DynamoDB
 - **Development Platform:** Kiro.ai
 
 ### Compliance & Standards
-- **Healthcare Standards:** FHIR, HL7, DICOM
+- **Healthcare Standards:** FHIR R4, HL7 v2.x, DICOM
 - **Indian Regulations:** DISHA (Digital Information Security in Healthcare Act), ABDM-compliant
 - **International Standards:** HIPAA-aligned, ISO 27001
+
+---
+
+## 📁 Repository Structure
+
+```
+swasthya/
+├── frontend/                   # React 18 + Vite + TailwindCSS
+│   ├── src/
+│   │   ├── components/         # UI components (shadcn/ui style)
+│   │   ├── contexts/           # AuthContext, ThemeContext
+│   │   ├── hooks/              # React Query hooks
+│   │   ├── lib/                # API clients, utils
+│   │   ├── pages/              # Route-level pages
+│   │   └── App.tsx
+│   ├── vite.config.ts
+│   └── package.json
+│
+├── backend/                    # Node.js + Express API
+│   ├── config/                 # Database & env config
+│   ├── database/               # SQL schema & migrations
+│   ├── middleware/             # JWT auth + RBAC
+│   ├── routes/                 # API endpoints
+│   ├── services/               # Business logic
+│   ├── server.js
+│   └── package.json
+│
+├── agents/                     # Python AI Agent Microservices
+│   ├── orchestrator/           # Central coordinator
+│   ├── forecast/               # Demand forecasting (port 8001)
+│   ├── triage/                 # Patient triage (port 8005)
+│   ├── staff-scheduling/       # Staff optimization (port 8002)
+│   ├── eror-scheduling/        # ER/OR management (port 8003)
+│   ├── discharge/              # Discharge planning (port 8004)
+│   └── federated-learning/     # FL servers (ports 8086, 8087)
+│
+├── tests/                      # Automated testing system
+│   ├── test-runner.js
+│   ├── auto-fix-engine.js
+│   └── integration-test-suite.js
+│
+├── docs/                       # Documentation
+│   ├── REQUIREMENTS.md
+│   ├── DESIGN.md
+│   ├── ARCHITECTURE.md
+│   └── AI4BHARAT_EVALUATION.md
+│
+├── docker-compose.yml
+├── .env.example
+└── README.md
+```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+, npm
+- PostgreSQL 14+
+- Python 3.9+ (for AI agents)
+- Docker (optional)
+
+### 1. Database Setup
+```bash
+psql -U postgres -c "CREATE DATABASE swasthya_db;"
+cd backend && npm run init-db
+```
+
+### 2. Backend
+```bash
+cd backend
+npm install
+cp .env.example .env  # Configure database credentials
+npm run dev  # http://localhost:3000
+```
+
+### 3. Frontend
+```bash
+cd frontend
+npm install
+npm run dev  # http://localhost:8000
+```
+
+### 4. AI Agents (Optional)
+```bash
+cd agents/forecast
+pip install -r requirements.txt
+python app.py  # Port 8001
+```
+
+### Default Login
+- Patient: Aadhaar `123412341234`, Password `patient123`
+- Hospital: Aadhaar `987698769876`, Password `hospital123`
+- Admin: Aadhaar `111122223333`, Password `admin123`
+
+---
+
+## 🐳 Docker Deployment
+```bash
+docker-compose up --build
+# Frontend: http://localhost:8000
+# Backend: http://localhost:3000
+```
 
 ---
 
