@@ -270,16 +270,39 @@ swasthya/
 │   ├── auto-fix-engine.js
 │   └── integration-test-suite.js
 │
-├── docs/                       # Documentation
-│   ├── REQUIREMENTS.md
-│   ├── DESIGN.md
-│   ├── ARCHITECTURE.md
-│   └── AI4BHARAT_EVALUATION.md
+├── docs/                       # Organized documentation
+│   ├── 01-project-overview/    # Project summaries and architecture
+│   ├── 02-requirements-and-design/  # Requirements and design specs
+│   ├── 03-implementation/      # Implementation guides
+│   ├── 04-deployment/          # Deployment and operations
+│   ├── 05-evaluation-and-quality/  # QA and evaluation
+│   ├── 06-project-management/  # Project tracking
+│   └── DOCUMENTATION_INDEX.md  # Complete documentation index
+│
+├── .kiro/                      # Kiro.ai specs and configuration
+│   └── specs/
+│       └── swasthya-enhancement-suite/
+│           ├── requirements.md  # 25 enhancement requirements
+│           ├── design.md        # Phased implementation design
+│           └── tasks.md         # 40 tasks in 4 phases
 │
 ├── docker-compose.yml
 ├── .env.example
 └── README.md
 ```
+
+### 📚 Documentation Organization
+
+All documentation is organized by context in the `docs/` folder:
+
+- **01-project-overview**: High-level project information and architecture
+- **02-requirements-and-design**: Requirements specifications and design documents
+- **03-implementation**: Implementation guides and development documentation
+- **04-deployment**: Deployment guides and operational documentation
+- **05-evaluation-and-quality**: Quality assurance and evaluation reports
+- **06-project-management**: Project tracking and management files
+
+See [docs/DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md) for a complete index of all documentation.
 
 ---
 
